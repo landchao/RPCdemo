@@ -12,6 +12,12 @@ import com.lamfire.hydra.rpc.ServiceRegistryConfig;
 public class InterfaceServer {
 
     public static void main(String[] args){
+
+
+
+    }
+
+    void invoke(){
         ServiceRegistryConfig config = new ServiceRegistryConfig();
         config.registerService(RemoteService.class,new RemoteServiceImpl());
 
@@ -23,10 +29,7 @@ public class InterfaceServer {
         server.setProviderConfig(config1);
         server.setServiceRegistry(config);
         server.startup();
-
-
     }
-
 
 
 }

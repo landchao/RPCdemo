@@ -8,7 +8,7 @@
 public class InterfaceClient {
 
     public static void main(String[] args){
-        RemoteService inter = RPCManagerFactory.getRpc().lookup(RemoteService.class);
+        RemoteService inter = RPCManagerFactory.lookup(RemoteService.class);
         String password = inter.getPassWord("admin");
         System.out.println(password);
 

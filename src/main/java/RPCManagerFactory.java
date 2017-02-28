@@ -12,7 +12,7 @@ public class RPCManagerFactory {
 
     static HydraRPC rpc = null;
 
-    public  static HydraRPC getRpc(){
+    private   static HydraRPC getRpc(){
         if(rpc != null){
             return rpc;
         }
@@ -25,6 +25,10 @@ public class RPCManagerFactory {
         rpc.addProvider(provider);
         return rpc;
 
+    }
+
+    public static <T> T lookup(java.lang.Class<?> interfaceClass) {
+        return getRpc().lookup(interfaceClass);
     }
 
 }
