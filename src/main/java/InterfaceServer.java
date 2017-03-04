@@ -18,6 +18,15 @@ public class InterfaceServer {
     }
 
     void invoke(){
+        
+        /**
+        *
+        *
+        * ApplicationContext ctx = SpringContextUtil.getApplicationContext();
+		* CheckProfitService service = ctx.getBean(CheckProfitService.class);
+		* ServiceRegistryConfig registConfig = new ServiceRegistryConfig();
+		* registConfig.registerService(CheckProfitService.class, service);
+        */
         ServiceRegistryConfig config = new ServiceRegistryConfig();
         config.registerService(RemoteService.class,new RemoteServiceImpl());
 
