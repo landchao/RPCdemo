@@ -1,0 +1,26 @@
+package com.uenpay.upos.profit.handler;
+
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.ContextLoader;
+
+@Component
+public class SpringContextUtil implements ApplicationContextAware {
+	
+	
+		@Autowired
+         private ApplicationContext applicationContext; // Spring应用上下文环境
+
+         public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+     
+               this.applicationContext = applicationContext;
+         }
+
+         public static ApplicationContext getApplicationContext(){
+        	 return ContextLoader.getCurrentWebApplicationContext();
+         }
+      
+}
